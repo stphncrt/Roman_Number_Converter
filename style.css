@@ -1,0 +1,39 @@
+    body {
+        background-image: url('./images/romanclock.jpg');
+        background-repeat: space;
+    }
+    
+    .container {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin-top: 12rem;
+    }
+    
+    .box {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        /* border: 2px solid rgba(160, 105, 69, 0.856); */
+        margin: 1em;
+        width: 30%;
+        height: 300px
+    }
+    
+    .button {
+        border-radius: 1em;
+        width: 50%;
+        height: 13%;
+        font-weight: bolder;
+        font-size: larger;
+        background: linear-gradient(90deg, #00C9FF 0%, #92FE9D 100%);
+    }
+    
+    .NumDisplay {
+        width: 50%;
+        border-radius: 1em;
+        height: 10%;
+        background: linear-gradient(90deg, #00C9FF 0%, #92FE9D 100%);
+        padding: 0.2em;
+    }
