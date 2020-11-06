@@ -28,21 +28,20 @@ let outputeng = document.getElementById('outputEng');
 document.getElementById('btnrom').addEventListener('click', EnglishConvert);
 
 function EnglishConvert() {
-    let num = 0;
     outputeng.innerHTML = '';
-    rom = inputrom.value.toUpperCase().split('');
-    let j;
-    if (rom.length > 10) {
-        alert('Please enter lower digits')
-    } else {
-        for (var i = 0; i < rom.length; i++) {
-            for (j in RomanDict) {
-                if (rom[i] === j) {
-                    num += parseInt(RomanDict[j])
-                }
-            }
+    romanNumber = inputrom.value.toUpperCase();
+    const romanNumList = ["CM", "M", "CD", "D", "XC", "C", "XL", "L", "IX", "X", "IV", "V", "I"];
+    const corresp = [900, 1000, 400, 500, 90, 100, 40, 50, 9, 10, 4, 5, 1];
+    let index = 0,
+        num = 0;
+    for (let i in romanNumList) {
+        index = romanNumber.indexOf(romanNumList[i]);
+        while (index != -1) {
+            num += parseInt(corresp[i]);
+            romanNumber = romanNumber.replace(romanNumList[i], "-");
+            index = romanNumber.indexOf(romanNumList[i]);
         }
     }
-    console.log(num)
+    console.log(num);
     outputeng.innerHTML = num;
 }
